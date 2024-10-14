@@ -20,6 +20,12 @@ qt_add_qml_module(appTeslaInfotainment
         QML_FILES ui/BottomBar/BottomBar.qml
         QML_FILES ui/RightScreen/RightScreen.qml
         QML_FILES ui/LeftScreen/LeftScreen.qml
+        RESOURCES ui/assets/carRender.png
+        RESOURCES ui/assets/carRender.png
+        RESOURCES
+        RESOURCES
+        RESOURCES resource.qrc
+        SOURCES controllers/system.h controllers/system.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

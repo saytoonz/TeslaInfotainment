@@ -40,10 +40,20 @@ Rectangle {
         anchors {
             top: parent.top
             bottom: parent.bottom
-            right: parent.right
+            right: volumeController.right
             rightMargin: 150
         }
 
         hvacController: passengerHVAC
+    }
+
+    VolumeControlComponent {
+      id: volumeController
+      anchors {
+          top: parent.top
+          bottom: parent.bottom
+          right: parent.right
+          rightMargin: 30
+      }
     }
 }

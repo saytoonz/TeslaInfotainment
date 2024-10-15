@@ -143,6 +143,16 @@ Rectangle {
         color: "#4E4E4E"
 
         text: systemHandler.userName
+    }
 
+    NavigationSearchBar {
+        id: navSearchBox
+        width: parent.width * 1.2 / 3
+        height: parent.height * 1/12
+        anchors {
+            left: lockIcon.left
+            top:  lockIcon.bottom
+            topMargin: 15
+        }
     }
 }

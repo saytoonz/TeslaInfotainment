@@ -6,4 +6,7 @@
         <file>ui/assets/unlock.png</file>
         <file>ui/assets/user.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>ui/RightScreen/NavigationSearchBox.qml</file>
+    </qresource>
 </RCC>

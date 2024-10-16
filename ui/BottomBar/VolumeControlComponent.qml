@@ -3,6 +3,25 @@ import QtQuick 2.15
 Item {
     property string fontColor: "#f0eded"
 
+    Connections {
+        target:  audioController
+        function onVolumeLevelChanged(){
+            visibleTimer.stop()
+            volumeIcon.visible = false
+            visibleTimer.start()
+        }
+    }
+
+    Timer {
+        id: visibleTimer
+        interval: 1000
+        repeat: false
+        onTriggered: {
+            volumeIcon.visible = true
+        }
+    }
+
+
     width: 90 * (parent.width / 1280)
 
     // Rectangle {
@@ -61,6 +80,15 @@ Item {
             else
                 return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzxJREFUeJztmk+oVkUYh5+3679UhBZuoohSw+heECKoMIjIiBZtFGmtkZvcCu5atApECQoKIlzkolUEQbdok1IRFAkRRtQiCBIDU7Hgij4tPg35HLtzznfmnO989zzLd8688/5+Z5jzZwYGBgYGBgZWLNF1ATejBrAH2A1sBS4AnwFvR8T5LmsrjrpZ/dQ0Z9WdXddYDPVB9efbiL/BefW+rmttHHWn+ucy4m/wZtf1Noq6R/07U7zqma5rbgz1sHqtgnjVpa7rnhh1lfpWReH/0XX9E6FuVD+uK77XBqh3q99NIr63BqgL6m+Tii9hwB1NJxxHfRY4BdxbeqypQ31JvdLEnS81A4qghvpqk8J7Y4C6Vj1RQnwJA1bVEDgPvAjcD6xOXLIdWJiwrtbINkCdA44AB2lh8cxF3Qa8DKwFjkfEt6UGOlZqWldhrKaH1L9uar6sPlJC/Lx6tQvB44zV9Ubiki+qaMudynsrXNsmVxOxJ9VnchPkitqSm7BljgOpJ8P+3AS5BqRW+86JiO+BDxNNL6gbcnJM47SuyjuJ2HogazGcBQM+B/5JxB/N6dx7AyLiCvBDoinr46v3BlznbCJ2V07HWTFgLhFLPSJvYVYM2JyIncvp2HsD1HXAfKLpj5z+vTcAeApYl4h/k9N5Fgx4JRG7xEowwNGG6fOJpk+uPx6XpbcGqHcC75He4j+am6e3BgAHGJ0hGOdURHyVmyTXgEu5CVvk4URsifSacFtyDThdJWlLLCZir0VE87U6Or1xobXfPv/DWF2HHP0Su6y+7ui/ZSWyzwipe4ETpF87WyMibqlZXRMRtbbOsxfBiPgAeA74sc5AJakrHmqeElMXgAeANYnmHcDhurmXIzUDpg51t9WOvtRaA5qgmJvqY8BHpL/UatP0DCj2IhQRXwOPAz+VGqMJir4JRsQvwBPAyZLjTD2Odozfn8Y1oDVs6MxA1zomRt2vLq1YAwDUXdZ8te669sZQd6i/V9R/seu6G0W9Rz1dwYAvu665cdRN6mKmAfu6rrcI6pzLnx9etMbnbq9Q96nnxoRfU981c7u7KlP3ZaVuAp5mdNrsIqM/vL92W9XAwMCs8i+BJIKhaX+SvAAAAABJRU5ErkJggg=="
         }
+    }
+
+    Text {
+        id: volumeTextLable
+        anchors.centerIn: volumeIcon
+        visible: !volumeIcon.visible
+        text: audioController.volumeLevel
+        font.pixelSize: 24
+        color: fontColor
     }
 
 

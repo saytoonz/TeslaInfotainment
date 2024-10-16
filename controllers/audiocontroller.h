@@ -20,6 +20,7 @@ public slots:
 
 signals:
     void volumeLevelChanged();
+
 private:
     int m_volumeLevel;
 };

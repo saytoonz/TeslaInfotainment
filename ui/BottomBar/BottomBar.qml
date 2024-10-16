@@ -40,7 +40,7 @@ Rectangle {
         anchors {
             top: parent.top
             bottom: parent.bottom
-            right: volumeController.right
+            right: volumeController.left
             rightMargin: 150
         }
 

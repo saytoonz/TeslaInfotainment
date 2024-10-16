@@ -35,7 +35,8 @@ qt_add_qml_module(appTeslaInfotainment
         RESOURCES
         SOURCES controllers/audiocontroller.h controllers/audiocontroller.cpp
         QML_FILES ui/BottomBar/VolumeControlComponent.qml
-        RESOURCES ui/assets/low-volume.png ui/assets/medium-volume.png ui/assets/volume-mute.png
+        RESOURCES  ui/assets/medium-volume.png ui/assets/volume-mute.png
+        RESOURCES ui/assets/high-volume.png ui/assets/low-volume.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

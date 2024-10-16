@@ -4,6 +4,16 @@ import QtQuick 2.15
     property string fontColor: "#f0eded"
     property var hvacController
 
+     width: 90 * (parent.width / 1280)
+
+     // Rectangle {
+     //     anchors {
+     //         left: decreamentButton.left
+     //         right: increamentButton.right
+     //     }
+
+     //     Component.onCompleted: console.log( width )
+     // }
 
     Rectangle {
         id: decreamentButton
